@@ -7,14 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerMovement playerMovement;
     private void Update()
     {
-        playerMovement.GetInput();
-
+        Vector2 inputVector = gameInput.GetMovementVectorNormalized();
+        playerMovement.Move(inputVector);
     }
-
-    private void FixedUpdate()
-    {
-        playerMovement.ProcessInput();
-    }
-
-
 }
