@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
 {
-    private const string IS_WALKING = "IsWalking";
+    private const string WALKING_DIRECTION_X = "WalkingDirectionX";
+    private const string WALKING_DIRECTION_Y = "WalkingDirectionY";
+    private const string SPEED = "Speed";
     private Animator myAnimator;
-    [SerializeField] private Player player;
+    [SerializeField] private PlayerMovement playerMovement;
 
 
     private void Awake()
@@ -15,6 +17,9 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Update()
     {
-        myAnimator.SetBool(IS_WALKING, player.IsWalking());
+        Vector2 movement = playerMovement.GetMovement();
+        myAnimator.SetFloat(WALKING_DIRECTION_X, movement.x);
+        myAnimator.SetFloat(WALKING_DIRECTION_Y, movement.y);
+        myAnimator.SetFloat(SPEED, movement.magnitude);
     }
 }
