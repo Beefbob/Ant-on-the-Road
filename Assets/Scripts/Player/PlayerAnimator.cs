@@ -18,7 +18,7 @@ public class PlayerAnimator : MonoBehaviour
     private void Update()
     {
         Vector2 face = playerMovement.GetFace();
-        Debug.Log(face.x + " " + face.y);
+        //Debug.Log(face.x + " " + face.y);
         myAnimator.SetFloat(WALKING_DIRECTION_X, face.x);
         myAnimator.SetFloat(WALKING_DIRECTION_Y, face.y);
         myAnimator.SetFloat(SPEED, playerMovement.GetMovement().magnitude);
