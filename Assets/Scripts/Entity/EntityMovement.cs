@@ -19,12 +19,11 @@ public class EntityMovement : MonoBehaviour
         myRigidBody.MovePosition(myRigidBody.position + (movement * moveSpeed * Time.fixedDeltaTime));
     }
 
-    public void MoveTo(Vector2 argMovement)
+    public void MoveTowards(Vector2 argMovementTarget)
     {
-        movement = argMovement;
-        if (movement != Vector2.zero) { face = movement; }
-        myRigidBody.MovePosition(myRigidBody.position + (movement * moveSpeed * Time.fixedDeltaTime));
-        Debug.Log("Body Position: " + myRigidBody.position);
+        movement = Vector2.MoveTowards(myRigidBody.position, argMovementTarget, moveSpeed * Time.deltaTime);
+        if ((argMovementTarget - movement) != Vector2.zero) { face = (argMovementTarget - movement); }
+        transform.position = movement;
     }
 
     /// <summary>

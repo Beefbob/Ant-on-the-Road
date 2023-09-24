@@ -9,12 +9,12 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         Vector2 movementVector = Vector2.zero;
-        //movementVector = Vector2.MoveTowards(transform.position, playerTarget.transform.position, 1);
-        movementVector = Vector2.MoveTowards(transform.position, target.transform.position, entityMovement.GetMoveSpeed() * Time.deltaTime);
+
+        //movementVector = Vector2.MoveTowards(entityMovement.GetPosition(), target.transform.position, entityMovement.GetMoveSpeed() * Time.deltaTime);
         //Debug.Log(transform.position);
         //Debug.Log(movementVector.x - transform.position.x);
-        Debug.Log("movementVector:" + movementVector);
+        //Debug.Log("movementVector:" + movementVector);
         //transform.position = movementVector;
-        entityMovement.MoveTo(movementVector);
+        entityMovement.MoveTowards(target.transform.position);
     }
 }
