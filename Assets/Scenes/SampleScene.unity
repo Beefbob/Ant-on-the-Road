@@ -5756,7 +5756,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 8.160512
+  orthographic size: 4.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6475,7 +6475,7 @@ GameObject:
   - component: {fileID: 1925893433}
   - component: {fileID: 1925893432}
   - component: {fileID: 1925893435}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BlackAntVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
